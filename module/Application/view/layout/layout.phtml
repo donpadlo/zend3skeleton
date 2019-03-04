@@ -1,0 +1,63 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('Учет ТМЦ в организации')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])                   
+            ->prependStylesheet($this->basePath('components/bootstrap/css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('components/bootstrap/js/bootstrap.min.js'))
+            ->prependFile($this->basePath('components/jquery/jquery.min.js'))
+        ?>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">ТМЦ</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ссылка 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ссылка 2</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Еще ссылки
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Ссылка 3</a>
+                  <a class="dropdown-item" href="#">Ссылка 4</a>
+                  <a class="dropdown-item" href="#">Ссылка 5</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+            <?= $this->content ?>
+            <hr>
+            <footer>
+                <p>&copy; 2011 - <?= date('Y') ?> by <a href="https://грибовы.рф">Pavel Gribov</a></p>
+            </footer>
+        </div>
+        <?= $this->inlineScript() ?>
+    </body>
+</html>
